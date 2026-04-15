@@ -16,7 +16,8 @@ EXEFS_SRC	:=	exefs_src
 ROMFS	:=	romfs
 
 export APP_AUTHOR := KranKRival
-export APP_VERSION = 1.2.0
+export APP_VERSION = 1.2.1
+export APP_JSON   := $(TOPDIR)/bootsoundnx.json
 
 ARCH	:=	-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE
 
@@ -30,7 +31,7 @@ CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:= -lnx -lm -lmpg123 `freetype-config --libs`
+LIBS	:= -lnx -lm -lmpg123 -lfreetype
 
 LIBDIRS	:= $(PORTLIBS) $(LIBNX)
 

@@ -7,7 +7,6 @@
 #include <switch.h>
 
 #include "mp3.h"
-#include "util.h"
 
 bool onboot = false;
 
